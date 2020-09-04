@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BTStest</string>
+
+    <string-array name="pasar_area_label">
+        <item><font color="#A9A9A9"><b>Pilih pasar/area sesuai alamat kamu</b></font></item>
+        <item>Caringin</item>
+        <item>Pasir Kaliki</item>
+        <item>Cicaheum</item>
+        <item>Cimahi</item>
+        <item>Coblong</item>
+    </string-array>
+
+    <string-array name="pengiriman">
+        <item>Ya</item>
+        <item>Tidak</item>
+    </string-array>
+</resources>
+

@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddActivity"
+    android:orientation="vertical">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_default_layout">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/add_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="0dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/back_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_back"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"/>
+
+                <TextView
+                    android:layout_toRightOf="@+id/back_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tambah Barang"
+                    android:textSize="16sp"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/primaryText"/>
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Barang"
+                    android:textColor="@color/charcoal"/>
+
+                <EditText
+                    android:id="@+id/nama_barang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan nama barang"
+                    android:background="@drawable/edittext_border_radius"
+                    android:padding="10dp"
+                    android:textColor="@color/charcoal"
+                    android:imeOptions="actionNext"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kategori"
+                    android:textColor="@color/charcoal"/>
+
+                <Spinner
+                    android:id="@+id/kategori_barang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/pasar_area_label"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:background="@drawable/edittext_border_radius"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Harga"
+                    android:textColor="@color/charcoal"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:background="@drawable/input_group_button_kiri"
+                        android:focusable="false"
+                        android:clickable="false"
+                        android:textSize="14sp"/>
+
+                    <EditText
+                        android:id="@+id/harga_barang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="10000"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+                        android:textColor="@color/charcoal"
+                        android:padding="10dp"
+                        android:background="@drawable/input_group_text_kanan"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Diskon"
+                        android:textColor="@color/charcoal"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" (Optional)"
+                        android:textColor="@color/secondaryText"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:background="@drawable/input_group_button_kiri"
+                        android:focusable="false"
+                        android:clickable="false"
+                        android:textSize="14sp"/>
+
+                    <EditText
+                        android:id="@+id/diskon_barang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="5000"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+                        android:textColor="@color/charcoal"
+                        android:padding="10dp"
+                        android:background="@drawable/input_group_text_kanan"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:id="@+id/text_berat_barang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Berat Barang"
+                    android:textColor="@color/charcoal"/>
+
+                <EditText
+                    android:id="@+id/berat_barang"
+                    android:layout_below="@id/text_berat_barang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:hint="0.5"
+                    android:textColor="@color/primaryText"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:textSize="14sp"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"
+                    android:background="@drawable/input_group_text_kiri"
+                    android:padding="10dp"/>
+
+                <EditText
+                    android:id="@+id/kg"
+                    android:layout_below="@id/text_berat_barang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kg"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    android:background="@drawable/input_group_button_kanan"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_toRightOf="@id/berat_barang"
+                    android:focusable="false"
+                    android:clickable="false"/>
+
+                <TextView
+                    android:id="@+id/text_kondisi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kondisi"
+                    android:textColor="@color/charcoal"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_toRightOf="@id/kg"
+                    android:layout_toLeftOf="@id/pengiriman"/>
+
+                <CheckBox
+                    android:id="@+id/kondisi_check"
+                    android:layout_below="@id/text_berat_barang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="Barang bekas"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:layout_toRightOf="@id/kg"/>
+
+                <TextView
+                    android:id="@+id/text_pengiriman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Butuh pengiriman"
+                    android:textColor="@color/charcoal"
+                    android:layout_toRightOf="@id/kondisi_check"
+                    android:layout_alignParentRight="true"/>
+
+                <Spinner
+                    android:id="@+id/pengiriman"
+                    android:layout_below="@id/text_pengiriman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/kondisi_check"
+                    android:layout_alignParentRight="true"
+                    android:entries="@array/pengiriman"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:background="@drawable/edittext_border_radius"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Stok"
+                        android:textColor="@color/charcoal"
+                        android:layout_weight="1"
+                        android:layout_marginRight="100dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Minimum Pembelian"
+                        android:textColor="@color/charcoal"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="-70dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginRight="100dp">
+                        <EditText
+                            android:id="@+id/stok_barang"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="1"
+                            android:textStyle="bold"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            android:padding="10dp"
+                            android:background="@drawable/edittext_border_radius"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="-70dp">
+                        <EditText
+                            android:id="@+id/minimum_pembelian"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="1"
+                            android:textStyle="bold"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            android:padding="10dp"
+                            android:background="@drawable/edittext_border_radius"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deskripsi barang"
+                    android:textColor="@color/charcoal"/>
+
+                <EditText
+                    android:id="@+id/deskripsi_barang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Isi deskripsi barang kamu"
+                    android:background="@drawable/edittext_border_radius"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:inputType="textMultiLine"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Foto Barang"
+                    android:textColor="@color/charcoal"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/preview_thumbnail_barang"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@drawable/ic_image"
+                        android:layout_margin="5dp"
+                        android:layout_centerHorizontal="true"/>
+                    <Button
+                        android:id="@+id/thumbnail_foto_button"
+                        android:layout_below="@id/preview_thumbnail_barang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thumbnail"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"
+                        android:backgroundTint="@color/colorPrimaryLight"
+                        android:layout_centerHorizontal="true"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal">
+
+                <CheckBox
+                    android:id="@+id/check_syarat_ketentuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:textColor="@color/charcoal"/>
+
+                <TextView
+                    android:id="@+id/text_syarat_ketentuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/charcoal"
+                    android:layout_toRightOf="@+id/check_syarat_ketentuan"
+                    android:textAlignment="center"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/jual_barang_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:text="Jual Barang"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/colorPrimaryDark"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
